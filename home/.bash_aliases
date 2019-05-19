@@ -164,17 +164,7 @@ alias INSTALL='sudo apt -y install'
 # Troubleshoot: "youtube-dl -F --verbose https://www.youtube.com/playlist?list=PLgJ5ZeA-kk-cSmEL0MmKfx02_Y7lKxDyH"
 
 # Download playlist as MP3 files
-YTDL () {
-  youtube-dl \
-  --download-archive downloaded.txt \
-  --no-post-overwrites \
-  --audio-quality 320K \
-  --add-metadata -ciwx \
-  --audio-format mp3 -o '%(title)s.%(ext)s' \
-  --metadata-from-title '%(artist)s - %(title)s' \
-  --embed-thumbnail \
-  "$1"
-}
+alias YTDL='youtube-dl -x --audio-format wav -o "/mnt/e/Music/YoutubeDL/%(title)s.%(ext)s"'
 
 # Download playlist as WAV files
 YTDLW () {
